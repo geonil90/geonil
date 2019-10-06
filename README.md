@@ -264,7 +264,18 @@
   (zip압축해제경로)\kakaopay_exam\utility\Postman-win64-7.8.0-Setup.exe
   ```
   2. 위 API 명세에 맞게 수행
-
+  ```
+  1~3 API의 경우 GET 방식으로 선택 후 
+  localhost:8084/exam1 ~ localhost:8084/exam3 입력 후 Send 버튼 클릭
+  
+  4 API의 경우 
+  POST localhost:8084/exam4 입력 후
+  Body 탭으로 이동하여 raw를 선택하고 우측 셀렉트 박스에 JSON 선택 후 
+  아래와 같은 형태의 JSON 구조의 입력 값을 입력 후 Send 버튼 클릭 
+  {
+   "brName":"분당점"
+   }
+  ```
 ## 문제 해결 방법
 - 과제를 받았을 때 처음든 생각이 'DB를 구성해서 해당 내용을 SQL을 통해 조회하면 쉽게 끝나겠다.'였습니다. 그래서 처음에는 spring Boot에 내장되어있는 H2 DB를 활용해서 제공받은 CSV 파일을 읽어 DB에 저장하는 기능을 구현하고 서비스단 로직은 전부 SQL을 통해 조회하는 형태로 구현하려고 했습니다만, 그렇게 되면 너무 쉽게 끝나는 것 같아서 DB구성 없이 CSV 파일을 읽어 java 단에서 데이터를 가공하고 리턴하는 API를 구현하기로 하였습니다.
    1. API 1번 해결과정
