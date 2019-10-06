@@ -13,7 +13,8 @@
 1. exam : 전달받은 과제정보
 2. ide : 통합개발환경도구. 현 과제에서는 위에 기술한 대로 STS 툴을 활용
 3. java : 과제에 사용된 자바, 현 과제에는 1.8 버전 활용
-4. utility : 수행 시 필요한 유틸리티 모음 현과제에서는 curl만 사용. ex) sqldevelopr 같은 DB 툴이나, putty 같은 터미널 연결도구 등.
+4. utility : 수행 시 필요한 유틸리티 모음 현과제에서는 curl과 postman만 사용.  
+   ex) sqldevelopr 같은 DB 툴이나, putty 같은 터미널 연결도구 등.
 5. was : 프로젝트에서 사용할 was를 저장, 해당 폴더에 tomcat 8.5.42 가 들어가 있으나, 예시일 뿐 현 과제에서는 임베디드된 tomcat 활용
 6. workspace : 개발된 소스 모음.
 
@@ -185,7 +186,7 @@
 - Request
     - method: POST
     - URI
-        - localhost:8084/exam3
+        - localhost:8084/exam4
     - Body
         - brName : 관리점명
 
@@ -254,8 +255,9 @@
       curl -X GET http://localhost:8084/exam2
     3. API 3번 실행
       curl -X GET http://localhost:8084/exam3
-    4. API 4번 '판교점'을 입력값으로 실행
-      curl -X POST -H "Content-Type: application/json" -d @paramData1.txt http://localhost:8084/exam4       5. API 4번 '분당점'을 입력값으로 실행
+    4. API 4번 '판교점'을 입력값으로 실행 (curl을 통해 json 값을 파라미터로 던질때 한글의 경우 정상적으로 전달이 안되는 문제가 있어서 json 파일로 던짐)
+      curl -X POST -H "Content-Type: application/json" -d @paramData1.txt http://localhost:8084/exam4       
+    5. API 4번 '분당점'을 입력값으로 실행
       curl -X POST -H "Content-Type: application/json" -d @paramData2.txt http://localhost:8084/exam4   
     6. API 4번 '잠실점'을 입력값으로 실행
       curl -X POST -H "Content-Type: application/json" -d @paramData3.txt http://localhost:8084/exam4   
